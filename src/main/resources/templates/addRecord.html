@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<linkhead>
+	<meta charset="ISO-8859-1">
+  <title>Add Record</title>
+  <link>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" 
+  rel="stylesheet" 
+  integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" 
+  crossorigin="anonymous">
+  </link>
+  
+</head>
+<body style="background-color: beige;">
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+	 
+    <a class="navbar-brand" href="#">Patient Records</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="home1">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+       
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-6">
+				<div class="card">
+					<div class="card-header">
+						<h3 class="text-center">Record Information</h3>
+					
+					
+					<div class="card-body">
+    <div th:if="${session.msg}">
+        
+
+
+        </div>
+
+
+    </div>
+</div>
+
+						<form th:action="@{/save_record}" method="post">
+							<div class="mb-4">
+								<label for="recordID" class="form-label">Record ID</label>
+								<input type="text" class="form-control" id="recordID" placeholder="Enter Record ID" name="id">
+							</div>
+							<div class="mb-4">
+								<label for="patientID" class="form-label">Patient ID</label>
+								<input type="text" class="form-control" id="pid" placeholder="Enter Patient ID" name="p_id">
+							</div>
+							<div class="mb-4">
+								<label for="date" class="form-label">Date</label>
+								<input type="date" class="form-control" id="date" placeholder="Enter Date of appointment" name="date">
+							</div>
+							<div class="mb-4">
+								<label for="diagnosis" class="form-label">Patient Diagnosis</label>
+								<input type="text" class="form-control" id="diagnosis" placeholder="Enter Patient Diagnosis" name="diagnosis">
+							</div>
+							<div class="mb-4">
+								<label for="treatment" class="form-label">Patient Treatment</label>
+								<input type="text" class="form-control" id="treatment" placeholder="Enter Patient Treatment" name="treatment">
+							</div>
+							<div class="mb-4">
+								<label for="doc_name" class="form-label">Doctor Name</label>
+								<input type="text" class="form-control" id="doc_name" name="doc_name">
+							</div>
+							<div class="mb-4">
+								<label for="admission" class="form-label">Date of Admission </label>
+								<input type="date" class="form-control" id="admission" rows="3" placeholder="Enter Date of Admission" name="admission"></input>
+							</div>
+							<div class="mb-4">
+								<label for="discharge" class="form-label">Date of discharge</label>
+								<input type="date" class="form-control" id="discharge" placeholder="Enter Date of discharge" name="discharge">
+							</div>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" 
+	crossorigin="anonymous"></script>
+  
+  
+</body>
+</html>
